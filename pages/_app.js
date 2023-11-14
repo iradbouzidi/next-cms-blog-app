@@ -12,3 +12,6 @@ function MyApp({ Component, pageProps }) {
   );
 }
 export default MyApp;
+
+// https://www.youtube.com/watch?v=HYv55DhgTuA
+// https://github1s.com/adrianhajdin/project_graphql_blog
