@@ -1,20 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import Link from "next/link";
-//import { getCategories } from "../services";
+import { getCategories } from "../services";
 
 const Header = () => {
-  const categories = [
-    { name: "React", slug: "react" },
-    { name: "Web Development", slug: "web-dev" },
-  ];
-  //const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState([]);
 
-  /* useEffect(() => {
+  useEffect(() => {
     getCategories().then((newCategories) => {
       setCategories(newCategories);
     });
-  }, []);*/
+  }, []);
 
   return (
     <div className="container mx-auto px-10 mb-8">
@@ -27,8 +23,8 @@ const Header = () => {
           </Link>
         </div>
         <div className="hidden md:float-left md:contents">
-          {categories.map((category) => (
-            <Link key={category.slug} href={`/category/${category.slug}`}>
+          {categories.map((category, index) => (
+            <Link key={index} href={`/category/${category.slug}`}>
               <span className="md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer">
                 {category.name}
               </span>
